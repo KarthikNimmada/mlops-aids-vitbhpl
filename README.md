@@ -1,83 +1,216 @@
-# Hi there! 👋 I'm Karthik Nimmada
+# 🚗 Car Price Prediction App
 
-### AI & Data Science Enthusiast | Aspiring Machine Learning Engineer | Data Scientist
+## 📌 Project Overview
 
-Welcome to my GitHub profile! I'm passionate about Artificial Intelligence, Machine Learning, Deep Learning, and Data Science. I enjoy exploring real-world problems and developing data-driven solutions using programming, statistical analysis, and machine learning techniques.
+The **Car Price Prediction App** is a Machine Learning-based web application developed using Python and Streamlit. It predicts the approximate selling price of used cars based on various vehicle specifications.
 
-### 👨‍💻 About Me
+The application uses a **Random Forest Regression** algorithm trained on a cleaned Cars24 dataset. Users can enter car details such as manufacturing year, kilometers driven, mileage, engine capacity, maximum power, fuel type, transmission type, seller type, and number of seats to obtain an estimated selling price.
 
-- 🎓 Pursuing M.Tech in Artificial Intelligence and Data Science.
-- 💻 Interested in Artificial Intelligence, Machine Learning, and Data Science.
-- 📊 Passionate about Data Analysis, Data Visualization, and Predictive Modeling.
-- 🤖 Exploring Deep Learning, Computer Vision, and Explainable AI.
-- 🌱 Continuously learning new technologies and improving my technical skills.
-- 🎯 Career Goal: To become an AI/ML Engineer or Data Scientist.
-- ⚽ Outside technology, I enjoy playing and watching football.
+## 🎯 Project Objectives
 
-### 🛠️ Technical Skills
+- Develop a Machine Learning model to predict used car selling prices.
+- Perform data preprocessing and feature selection.
+- Apply feature scaling using StandardScaler.
+- Train a Random Forest Regression model.
+- Save the trained model and scaler for future predictions.
+- Develop an interactive web application using Streamlit.
+- Integrate the trained Machine Learning model with the Streamlit interface.
 
-**Programming Languages**
-- Python
-- SQL
+## 📊 Dataset Information
 
-**Data Analysis & Visualization**
-- Advanced Excel
-- Tableau
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+The project uses a cleaned Cars24 used-car dataset.
 
-**Machine Learning & AI**
-- Supervised Learning
-- Unsupervised Learning
-- Regression and Classification
-- Decision Trees
-- Random Forest
-- Support Vector Machines (SVM)
-- Deep Learning
-- Neural Networks
-- Computer Vision
+**Dataset Details:**
+- Total Records: 19,820
+- Total Columns: 18
+- Target Variable: `selling_price`
+- Missing Values: 0
 
-**Other Skills**
-- Exploratory Data Analysis (EDA)
-- Data Cleaning and Preprocessing
-- Feature Engineering
-- Statistical Analysis
-- Hypothesis Testing
-- Data Visualization
+**Input Features:**
 
-### 🚀 Projects
+| Feature | Description |
+|---|---|
+| year | Manufacturing year of the car |
+| km_driven | Total kilometers driven |
+| mileage | Fuel efficiency in kmpl |
+| engine | Engine capacity in cc |
+| max_power | Maximum engine power in bhp |
+| age | Age of the car |
+| seller_type | Category of seller |
+| fuel_type | Type of fuel used |
+| transmission_type | Manual or Automatic |
+| seats | Number of seats |
 
-Here are some areas I work on:
+The `make` and `model` columns are excluded from the model training features.
 
-- 📊 Data Analysis and Exploratory Data Analysis
-- 🤖 Machine Learning Prediction Models
-- 🧠 Deep Learning Applications
-- 👁️ Computer Vision Projects
-- 📈 Data Visualization and Business Intelligence
+## ⚙️ Technologies & Libraries Used
 
-Explore my repositories to learn more about my projects and implementations.
+- **Programming Language:** Python
+- **Machine Learning:** Scikit-learn
+- **Algorithm:** Random Forest Regressor
+- **Data Manipulation:** Pandas, NumPy
+- **Data Visualization:** Matplotlib, Seaborn
+- **Feature Scaling:** StandardScaler
+- **Model Serialization:** Joblib
+- **Web Framework:** Streamlit
+- **Development Environment:** Jupyter Notebook, VS Code
+- **Version Control:** Git and GitHub
 
-### 📚 Currently Learning
+## 🧠 Machine Learning Workflow
 
-- Advanced Machine Learning
-- Deep Learning Architectures
-- Natural Language Processing (NLP)
-- Generative AI
-- MLOps and Model Deployment
-- Explainable Artificial Intelligence (XAI)
+The project follows these steps:
 
-### 🤝 Connect With Me
+1. **Data Collection:** Load the cleaned Cars24 dataset.
+2. **Data Preprocessing:** Prepare the dataset and encode categorical features.
+3. **Feature Selection:** Select relevant independent variables and the target variable.
+4. **Feature Scaling:** Apply StandardScaler to standardize the input features.
+5. **Model Training:** Train a Random Forest Regression model.
+6. **Model Evaluation:** Calculate MAE, MSE, and R² score.
+7. **Model Saving:** Save the trained model and scaler using Joblib.
+8. **Model Deployment:** Integrate the saved model into the Streamlit application.
+9. **Price Prediction:** Accept user inputs and predict the approximate car selling price.
 
-I'm always interested in connecting with people who share similar interests in AI, Machine Learning, and Data Science.
+## 📈 Model Performance
 
-- LinkedIn: [Add your LinkedIn URL]
-- GitHub: [Add your GitHub profile URL]
-- Email: [Add your professional email]
+The Random Forest Regression model produced the following results on the training dataset:
 
-### 💡 My Goal
+| Evaluation Metric | Result |
+|---|---:|
+| Mean Absolute Error (MAE) | 0.2984 |
+| Mean Squared Error (MSE) | 0.2269 |
+| R² Score | 0.9903 |
 
-"Turning data into insights and transforming ideas into intelligent solutions through Artificial Intelligence and Machine Learning."
+*Note: These are training-set evaluation results. Independent test-set evaluation is required to measure the model's generalization performance.*
 
-Thanks for visiting my GitHub profile! ⭐
+## 🖥️ Application Features
+
+The Streamlit application provides an interactive interface with the following features:
+
+- Manufacturing year selection.
+- Seller type selection.
+- Kilometers driven input.
+- Mileage input.
+- Maximum power input.
+- Fuel type selection.
+- Transmission type selection.
+- Engine capacity input.
+- Number of seats selection.
+- Predict Car Price button.
+- Estimated selling price display.
+
+## 📸 Application Preview
+
+The application provides a simple and interactive interface where users can enter vehicle specifications and obtain an estimated selling price.
+
+## 📁 Project Structure
+
+```text
+Car-Price-Prediction/
+│
+├── cars24_streamlit.py
+│
+├── cars24_training.ipynb
+│
+├── cars24-car-price-cleaned.csv
+│
+├── cars24_model.joblib
+│
+├── scaler.pkl
+│
+├── requirements.txt
+│
+├── .gitignore
+│
+└── README.md
+```
+
+**Note:** `cars24_model.joblib` and `scaler.pkl` are generated by executing the model training notebook.
+
+## 🚀 Installation and Execution
+
+### Step 1: Clone the Repository
+
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+```
+
+### Step 2: Navigate to the Project Directory
+
+```bash
+cd Car-Price-Prediction
+```
+
+### Step 3: Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Step 4: Activate the Virtual Environment
+
+For Windows PowerShell:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### Step 5: Install Required Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 6: Generate Model Files
+
+Open and execute `cars24_training.ipynb` to train the Random Forest Regression model and generate:
+
+- `cars24_model.joblib`
+- `scaler.pkl`
+
+Ensure both files are saved in the project directory.
+
+### Step 7: Run the Streamlit Application
+
+```bash
+streamlit run cars24_streamlit.py
+```
+
+### Step 8: Access the Application
+
+Open the local URL displayed in your terminal, usually:
+
+```text
+http://localhost:8501
+```
+
+Enter the required car specifications and click **Predict Car Price** to view the estimated selling price.
+
+## 🔮 Future Improvements
+
+- Implement train-test splitting and cross-validation.
+- Compare multiple regression algorithms.
+- Perform hyperparameter tuning.
+- Improve model accuracy and generalization.
+- Add car brand and model selection.
+- Implement interactive data visualizations.
+- Deploy the application using Streamlit Community Cloud.
+- Improve the user interface and prediction experience.
+
+## 👨‍💻 Author
+
+**Karthik Nimmada**
+
+Machine Learning | Artificial Intelligence | Data Science
+
+## ⭐ Acknowledgement
+
+This project was developed as a practical Machine Learning application to understand the complete workflow of data preprocessing, model training, model evaluation, model serialization, and deployment using Streamlit.
+
+If you find this project useful, feel free to ⭐ star the repository!
+
+---
+
+**Project:** Car Price Prediction App  
+**Domain:** Machine Learning and Regression  
+**Framework:** Streamlit  
+**Algorithm:** Random Forest Regression
