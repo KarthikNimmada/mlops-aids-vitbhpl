@@ -1,4 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+session2_streamlit/*.joblib filter=lfs diff=lfs merge=lfs -text
+session2_streamlit/*.pkl filter=lfs diff=lfs merge=lfs -text
 session2_streamlit/cars24_model.joblib filter=lfs diff=lfs merge=lfs -text
 session2_streamlit/scaler.pkl filter=lfs diff=lfs merge=lfs -text
